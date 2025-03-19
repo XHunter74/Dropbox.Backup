@@ -1,0 +1,15 @@
+SYNC_FOLDER=C:\to-backup\
+DELETE_FILE_AFTER_SYNC=true
+FILES_MASK=files_[0-9]{4}-[0-9]{2}-[0-9]{2}.[0-9]{4}.zip
+DROPBOX_FOLDER=""
+DROPBOX_APP_TOKEN=dropbox token
+MAX_FILES=72
+//Logger
+// logLevel: debug, info, warn or error
+LOG_LEVEL="debug"
+// serviceName: daily rotate files will have this name
+SERVICE_NAME="backups-sync"
+// logAppenders: console or rotate or both in array
+LOGGERS="rotate, console"
+// logFilePath: where daily rotate files are saved
+LOG_FILE_PATH="logs"

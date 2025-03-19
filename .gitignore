@@ -1,0 +1,6 @@
+app.cfg
+backup/
+build/
+build_obf/
+logs/
+node_modules/
