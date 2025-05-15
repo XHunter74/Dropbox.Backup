@@ -4,11 +4,11 @@ import { FilesHelper } from "./files-helper";
 import { DropBoxHelper } from "./dropbox-helper";
 import { ConfigHelper } from "./config";
 import { FileInfo } from './file-info';
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+import { LoggerHelper } from './logger.helper';
 
 (async () => {
     const config = new ConfigHelper();
-    const logger = new LoggerService(config.LogLevel, config.ServiceName, config.Loggers, config.LogFilePath);
+    const logger = LoggerHelper.getLogger(config);
 
     try {
         logger.debug(`[SyncApp] => Start Sync Folder '${config.SyncFolder}'`);

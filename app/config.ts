@@ -1,4 +1,3 @@
-import { LoggerTransport } from 'nest-logger';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 
@@ -59,17 +58,10 @@ export class ConfigHelper {
         return this.envConfig.LOG_FILE_PATH;
     }
 
-    get Loggers(): LoggerTransport[] {
-        const result = new Array(0);
-        const loggers = this.envConfig.LOGGERS.split(',');
-        loggers.forEach(e => {
-            if (e.trim().toLowerCase() === 'rotate') {
-                result.push(LoggerTransport.ROTATE);
-            }
-            if (e.trim().toLowerCase() === 'console') {
-                result.push(LoggerTransport.CONSOLE);
-            }
-        });
-        return result;
+    get MaxLogFiles(): number {
+        const strValue = this.envConfig.MAX_LOG_FILES;
+        if (!strValue) return 0;
+        const value = Number.parseInt(strValue);
+        return value;
     }
 }
