@@ -10,7 +10,7 @@ This project is a Node.js/TypeScript application for synchronizing files from a 
 - Detailed logging with support for rotating log files
 
 ## Requirements
-- Node.js (v12 or later recommended)
+- Node.js
 - Dropbox API token
 
 ## Installation
